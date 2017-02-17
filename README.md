@@ -1,6 +1,11 @@
 # rapid-service-template
 A docker-compose + MEAN template for rapid service development
 
+## live demo
+https://while.software/template
+username: demo
+password: pass
+
 ## install
 1. git clone
 2. ln -s compose/development.yml docker-compose.yml
