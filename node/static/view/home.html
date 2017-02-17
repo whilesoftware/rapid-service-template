@@ -1,6 +1,6 @@
 
 <!-- if not logged in, present login dialog -->
-<div class="container ng-hide" ng-show="isLoggedIn()">
+<div class="container ng-hide" ng-show="!isLoggedIn()">
 
 <div ng-show="error" class="alert alert-danger row">
   <span>{{error.message}}</span>
