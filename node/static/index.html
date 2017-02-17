@@ -33,34 +33,15 @@
     <nav class="navbar navz" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <button ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-na vbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
           <a class="navbar-brand" href="">Rapid Frontend Client</a>
         </div>
-
-        <!-- collect the links for toggling -->
-        <div uib-collapse="navCollapsed" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="">menu entries go here</a></li>
-            <li ng-show="isLoggedIn()" class="dropdown" uib-dropdown>
-              <a href="" uib-dropdown-toggle class="dropdown-toggle">
-                {{currentUser()}}
-                <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu" uib-dropdown-menu>
-                <li>
-                  <a href="" ng-click="logOut()">
-                    log out
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li ng-show="isLoggedIn()">
+            <a ng-click="logOut()" href="">
+              logout {{currentUser()}}
+            </a>
+          </li>
+        </ul>
       </div>
     </nav>
   </div>

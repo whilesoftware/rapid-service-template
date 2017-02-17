@@ -11,7 +11,6 @@ rapid_frontend_client.config([
   '$qProvider',
   function( $stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $locationProvider, $httpProvider, $qProvider) {
 
-    $qProvider.errorOnUnhandledRejections(false);
     $httpProvider.interceptors.push('authInterceptor');
     $urlMatcherFactoryProvider.strictMode(false);
 
