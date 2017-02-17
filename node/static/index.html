@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <base href="/template/">
+
+  <title>Rapid Service Template | a boilerplate template for docker-compose + MEAN</title>
+
+  <script src="js/angular.min.js"></script>
+  <script src="js/angular-ui-router.min.js"></script>
+  <script src="js/ui-bootstrap-tpls.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/home.js"></script>
+  <script src="js/404.js"></script>
+  <script src="js/auth.js"></script>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/main.css" rel="stylesheet" />
+</head>
+
+<body ng-app="rapid.frontend.client">
+
+  <!-- navbar -->
+  <div ng-controller="navController">
+    <nav class="navbar navz" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-na vbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="">Rapid Frontend Client</a>
+        </div>
+
+        <!-- collect the links for toggling -->
+        <div uib-collapse="navCollapsed" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li>menu entries go here</li>
+            <li ng-show="isLoggedIn()" class="dropdown" uib-dropdown>
+              <a href="" uib-dropdown-toggle>
+                {{currentUser()}}
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu" uib-dropdown-menu>
+                <li>
+                  <a href="" ng-click="logOut()">
+                    log out
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- content -->
+  <ui-view></ui-view>
+
+</body>
+</html>

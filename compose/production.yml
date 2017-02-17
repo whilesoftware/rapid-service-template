@@ -1,0 +1,38 @@
+version: '2'
+services:
+  proxy:
+    restart: always
+    build: ./nginx
+    links:
+      - web1
+      - web2
+    ports:
+      - "3333:80"
+  web1:
+    restart: always
+    build: ./production/web1
+    volumes:
+      - ./production/web1:/src/app/src
+    ports:
+      - 8080
+    links:
+      - db
+    command: node src/server.js
+  web2:
+    restart: always
+    build: ./production/web2
+    volumes:
+      - ./production/web2:/src/app/src
+    ports:
+      - 8080
+    links:
+      - db
+    command: node src/server.js
+  db:
+    restart: always
+    image: mongo
+    ports:
+      - 27017
+    volumes:
+      - ./shared/db:/data/db
+      - ./shared/db-scripts:/script
