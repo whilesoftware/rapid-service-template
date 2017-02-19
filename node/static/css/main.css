@@ -3,6 +3,10 @@
   custom css for the rapid=service-template demo landing page
 */
 
+body { 
+  padding-bottom: 70px;
+}
+
 .rst_navbar {
   background: #eee;
 }
