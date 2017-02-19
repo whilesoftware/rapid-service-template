@@ -11,7 +11,7 @@ rapid_frontend_client.factory(
       authInterceptor.request = function(config) {
         var token = auth.getToken();
 
-        // see definition for API at top of this file
+        // see definition for API at top of main.js
         // if this is an API request, make sure we send our auth token
         // if this is NOT an API request, make sure we *don't* send the auth token
         if (config.url.indexOf(API) === 0 && token) {
@@ -43,7 +43,7 @@ rapid_frontend_client.factory(
     '$window',
     function($window) {
       var auth = {};
-      // NOTE: change this token name to something unique when you fork this project
+
       var TOKEN_NAME = 'rapid-auth-token';
 
       auth.saveToken = function(token) {

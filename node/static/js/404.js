@@ -1,7 +1,7 @@
 rapid_frontend_client = angular.module('rapid.frontend.client');
 
 rapid_frontend_client.service(
-  'notfound',
+  'notFound',
   [
     function() {
       var self = this;
@@ -15,7 +15,7 @@ rapid_frontend_client.controller(
   'notFoundController',
   [
     '$scope',
-    'notfound',
+    'notFound',
     function($scope, notFound) {
       $scope.message = 'could not find \'' + notFound.url;
     }
