@@ -3,8 +3,6 @@ A docker-compose + MEAN template for rapid service development
 
 ## live demo
 https://while.software/template  
-username: demo  
-password: pass  
 
 ## install
 1. git clone

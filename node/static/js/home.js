@@ -11,10 +11,13 @@ rapid_frontend_client.controller(
       $scope.isLoggedIn = auth.isLoggedIn;
       $scope.currentUser = auth.currentUser;
 
+      $scope.the_token = auth.getToken();
+
       $scope.logIn = function() {
         user.logIn($scope.user)
           .then(function(response) {
             // do anything fancy when you log in?
+            $scope.the_token = auth.getToken();
           }, function(err) {
             $scope.error = err.data;
           });

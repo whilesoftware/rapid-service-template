@@ -2,3 +2,7 @@
 /*
   custom css for the rapid=service-template demo landing page
 */
+
+.rst_navbar {
+  background: #eee;
+}
