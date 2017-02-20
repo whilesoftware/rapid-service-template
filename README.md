@@ -11,6 +11,7 @@ https://while.software/template
 4. docker-compose up -d
 5. scripts/init_admin.sh "your_desired_username" "secret_password"
 6. add proxy_pass config to system-wide nginx (see below)
+7. update angular frontend's definition of your API base route (see node/static/js/main.js line 3)
 
 
 ## system nginx config to route to your app
